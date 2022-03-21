@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/chat",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "jvzel",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "pusher/pusher-php-server": "^7.0"
+  }
+}
