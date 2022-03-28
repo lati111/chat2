@@ -1,0 +1,4 @@
+{
+  "defaultPath": "http://localhost/chat/backend/",
+  "backendPath": "http://localhost/chat/frontend/",
+}

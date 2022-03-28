@@ -1,0 +1,15 @@
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+#loginButton {
+    width: 150px;
+}
+
+#error {
+    color: red;
+    font-size: 2em;
+}
