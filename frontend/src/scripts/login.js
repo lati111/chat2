@@ -54,7 +54,7 @@ function register() {
 
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
-            location.href = "../index.php";
+            location.href = config + "src/pages/chatbox.php";
         }
     }
     http.send(params);
