@@ -25,7 +25,7 @@ function login() {
                 document.getElementById("error").textContent = "gebruikersnaam of wachtwoord incorrect";
                 setTimeout(function() {document.getElementById("error").textContent = ""}, 2000)
             } else {
-                location.href = "../index.php";
+                location.href = config + "src/pages/chatbox.php";
             }
         }
     }

@@ -2,9 +2,9 @@
 session_start();
 $url = "";
 try {
-    $url = json_decode(file_get_contents("config.json"), true, 512, JSON_THROW_ON_ERROR)["defaultPath"] . "src/pages/chatbox.php";
+    $url = json_decode(file_get_contents("config.json"), true, 512, JSON_THROW_ON_ERROR)["defaultPath"];
 } catch (JsonException $e) {
-} echo $url;
+}
 if (!isset($_SESSION["ID"])) {
     header("Location: {$url}src/pages/chatbox.php");
 }
@@ -38,6 +38,8 @@ if (!isset($_SESSION["ID"])) {
 
 
 </div>
+<script>const relativePath = "";</script>
+<script src="<?php echo $url; ?>src/scripts/config.js"></script>
 <script src="<?php echo $url; ?>src/scripts/login.js"></script>
 </body>
 </html>
