@@ -1,5 +1,6 @@
 {
   "defaultPath": "http://localhost/chat/frontend/",
   "backendUrl": "http://localhost/chat/backend/",
-  "backendPath": "../backend/"
+  "backendPath": "../backend/",
+  "ajaxPath": "../backend/src/functions/ajax.php"
 }

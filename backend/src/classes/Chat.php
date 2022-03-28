@@ -1,14 +1,9 @@
 <?php
 $relativePath = "../../";
-try {
-    $config = json_decode(file_get_contents($relativePath."config.json"), true, 512, JSON_THROW_ON_ERROR);
-    $path = $relativePath . $config["backendPath"];
-} catch (JsonException $e) {
-}
-require $path . 'vendor/autoload.php';
-require $path . 'src/functions/PDO.php';
+require $relativePath . 'vendor/autoload.php';
+require $relativePath . 'src/functions/PDO.php';
 
-class chat {
+class Chat {
     private $db;
     private int $ID;
     private $pusher;
@@ -61,6 +56,6 @@ class chat {
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $ID) {
             $chats[] = $ID["receiverID"];
         }
-        return $chats[0];
+        return $chats;
     }
 }

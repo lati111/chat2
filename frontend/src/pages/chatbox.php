@@ -10,7 +10,6 @@ try {
 } catch (JsonException $e) {
 }
 if (!isset($_SESSION["ID"])) {header("Location: {$url}index.php");}
-require_once  $backend.'src/classes/chat.php';
 ?>
 <html>
 <head>
@@ -19,9 +18,9 @@ require_once  $backend.'src/classes/chat.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chatterbox</title>
-    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>src/style/chat.css">
 </head>
-<body>
+<body onload="getChats()">
 <input type="hidden" id="userID" value="<?php echo $_SESSION["ID"] ?>">
 <div id="usermenu">
     <b>je bent ingelogd als <?php echo $_SESSION["username"] ?></b>
@@ -53,12 +52,11 @@ require_once  $backend.'src/classes/chat.php';
     </div>
 </div>
 
-
-
-<?php
-
-?>
 <script src="https://js.pusher.com/7.0.3/pusher.min.js"></script>
-<script src="js/chat.js"></script>
+
+<script>const relativePath = "<?php echo $relativePath; ?>";</script>
+<script src="<?php echo $url; ?>src/scripts/config.js"></script>
+<script src="<?php echo $url; ?>src/scripts/ajax.js"></script>
+<script src="<?php echo $url; ?>src/scripts/chat.js"></script>
 </body>
 </html>

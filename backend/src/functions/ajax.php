@@ -3,14 +3,11 @@ session_start();
 
 if (isset($_POST["class"])) {
     $class = "";
-    try {
-        $path = json_decode(file_get_contents("../../config.json"), true, 512, JSON_THROW_ON_ERROR)["defaultPath"];
-    } catch (JsonException $e) {
-    }
+    $path = "../../";
     switch ($_POST["class"]) {
         case "chat":
-            require $path . 'src\classes\chat.php';
-            $class = new chat(); break;
+            require $path . 'src\classes\Chat.php';
+            $class = new Chat(); break;
         case "message":
             require $path . 'src\classes\message.php';
             $class = new message($_POST["constructArgs"][0]); break;
