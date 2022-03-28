@@ -12,14 +12,14 @@
     border: 2px black solid;
     width: 75%;
     padding: 13px;
-    border-radius: 25px;
+    border-radius: 8px;
 }
 
 #chatList {
     height: 75vh;
     width: 15%;
     padding: 5px 45px 5px 1px;
-    border-radius: 25px;
+    border-radius: 8px;
     border: 2px black solid;
 }
 

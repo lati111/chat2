@@ -11,11 +11,8 @@ let timer;
 
 async function getChats() {
     const chats = await ajaxClass("chat", "getChats");
-    console.log(chats)
-
     for (let i = 0; i < chats.length; i++) {
-        await ajaxClass("users")
-
+        const profile = await ajaxClass("users", "getProfile", [parseInt(chats[i])])
         addChat(chats[i], profile["username"]);
     }
 }

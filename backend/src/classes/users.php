@@ -1,9 +1,6 @@
 <?php
-try {
-    require json_decode(file_get_contents("../../config.json"), true, 512, JSON_THROW_ON_ERROR)["defaultPath"] . 'src/functions.PDO.php';
-} catch (JsonException $e) {
-}
-
+$relativePath = "../../";
+require $relativePath."src/functions/PDO.php";
 
 class users {
     private $key;
@@ -45,7 +42,7 @@ class users {
         $stmt = $db->prepare($sql);
         $stmt->bindParam(":userID", $userID);
         $stmt->execute();
-        return json_encode($stmt->fetch(PDO::FETCH_ASSOC), JSON_THROW_ON_ERROR);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 

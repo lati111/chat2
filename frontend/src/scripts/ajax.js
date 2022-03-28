@@ -5,7 +5,7 @@ async function ajaxClass(Class, Function, Parameters = [], ConstructArgs = []) {
     formData.append('parameters', JSON.stringify(Parameters));
     formData.append('constructArgs', JSON.stringify(ConstructArgs));
 
-    const promise = await fetch(ajaxPath, {
+    let promise = await fetch(ajaxPath, {
         method: 'post',
         body: formData,
         headers: {'Accept': 'application/json'}})
