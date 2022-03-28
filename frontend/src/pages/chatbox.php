@@ -6,7 +6,7 @@ $relativePath = "../../";
 try {
     $config = json_decode(file_get_contents($relativePath."config.json"), true, 512, JSON_THROW_ON_ERROR);
     $url = $config["defaultPath"];
-    $backend = $config["backendPath"];
+    $backend = $relativePath . $config["backendPath"];
 } catch (JsonException $e) {
 }
 if (!isset($_SESSION["ID"])) {header("Location: {$url}index.php");}

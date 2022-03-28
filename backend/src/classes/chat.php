@@ -1,10 +1,12 @@
 <?php
+$relativePath = "../../";
 try {
-    $path = json_decode(file_get_contents("../../config.json"), true, 512, JSON_THROW_ON_ERROR)["defaultPath"];
+    $config = json_decode(file_get_contents($relativePath."config.json"), true, 512, JSON_THROW_ON_ERROR);
+    $path = $relativePath . $config["backendPath"];
 } catch (JsonException $e) {
 }
-require $path . 'vendor\autoload.php';
-require $path . 'src/functions.PDO.php';
+require $path . 'vendor/autoload.php';
+require $path . 'src/functions/PDO.php';
 
 class chat {
     private $db;

@@ -51,9 +51,9 @@
     ],
     "require": {
         "php": "^7.2.5 || ^8.0",
-        "../../../../../chat/vendor/psr/http-factory": "^1.0",
-        "../../../../../chat/vendor/psr/http-message": "^1.0",
-        "../../../../../chat/vendor/ralouphie/getallheaders": "^3.0"
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "ralouphie/getallheaders": "^3.0"
     },
     "provide": {
         "psr/http-factory-implementation": "1.0",
